@@ -1,0 +1,53 @@
+
+<div class="media-body">
+<table class="table table-hover" >
+    <h1>PROJECTS LIST</h1>
+    <%= button_to "Create Project", new_project_path, method: :get %>
+    <thead>
+      <tr>
+        <th>Backlog projects</th>
+        <th>Pending projects</th>
+        <th>Done projects</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+            <% @backlog_projects.each do |project| %>
+              <%= link_to project.name, project_path(project) %>
+            <% end %>     
+         </td>
+        <td>
+            <% @inprogress_projects.each do |project| %>
+              <%= link_to project.name, bucket_path(project) %>
+            <% end %>
+        </td>
+        <td>
+            <% @done_projects.each do |project| %>
+              <%= link_to project.name, project_path(project) %>
+            <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>

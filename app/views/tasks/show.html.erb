@@ -1,0 +1,9 @@
+<h1><%= @task.name %></h1>
+
+<p><%= @task.description %></p>
+
+<h3><%= @task.project.name %></h3>
+
+<h6><%= @task.status %></h6>
+
+<%= button_to "Edit task", edit_task_path(@task), method: :get %>

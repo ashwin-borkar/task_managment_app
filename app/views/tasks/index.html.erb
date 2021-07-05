@@ -1,0 +1,17 @@
+<h1>TASKS LIST</h1>
+
+<%= button_to "Create Task", new_task_path, method: :get %>
+
+<h3>In-progress Tasks</h3>
+<ul>
+<% @inprogress_tasks.each do |task| %>
+    <li><%= link_to task.name, task_path(task) %></li>
+<% end %>
+</ul>
+
+<h3>Done Tasks</h3>
+<ul>
+<% @done_tasks.each do |task| %>
+    <li><%= link_to task.name, task_path(task) %></li>
+<% end %>
+</ul>

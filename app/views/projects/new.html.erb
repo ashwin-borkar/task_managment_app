@@ -1,0 +1,9 @@
+<h1>CREATE NEW PROJECTS</h1>
+
+<%= form_for(@project) do |f| %>
+    <%= f.label :name%><br>
+    <%= f.text_field :name%><br>
+    <br><%= f.label :description%><br>
+    <%= f.text_area :description%><br>
+    <br><%= f.submit %>
+<% end %>
